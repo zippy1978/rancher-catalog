@@ -21,4 +21,4 @@
       type: "string"
       required: true
       default: "key1=value1,key2=value2"
-      description: "Example: key1=value1,key2=value2, etc…"
+      description: "Example: key1=value1,key2=value2, etc..."

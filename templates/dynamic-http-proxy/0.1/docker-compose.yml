@@ -1,7 +1,7 @@
 dynamic-http-proxy:
   labels:
     io.rancher.sidekicks: letsencrypt-companion
-    io.rancher.scheduler.affinity:host_label: io.rancher.host.hostname=${hostname}
+    io.rancher.scheduler.affinity:host_label: ${affinity_host_labels}
   image: jwilder/nginx-proxy
   container_name: nginx
   ports:

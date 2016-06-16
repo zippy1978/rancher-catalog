@@ -2,7 +2,7 @@
   name: Dynamic HTTP Proxy
   version: default
   description: |
-    Dynamic HTTP Proxy designed to handle traffic and domains in front of web applications
+    Dynamic HTTP Proxy designed to handle traffic and domains in front of web applications.
   questions:
     - variable: http_port
       label: "HTTP port"
@@ -16,9 +16,9 @@
       required: true
       default: 443
       description: "HTTPS port"
-    - variable: hostname
-      label: "Hostname"
+    - variable: affinity_host_labels
+      label: "Affinity host labels"
       type: "string"
       required: true
-      default: "host"
-      description: "Name of the the target host"
+      default: "key1=value1,key2=value2"
+      description: "Example: key1=value1,key2=value2, etc…"

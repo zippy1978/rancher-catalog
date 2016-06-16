@@ -16,9 +16,9 @@
       required: true
       default: 443
       description: "HTTPS port"
-    - variable: affinity_host_labels
-      label: "Affinity host labels"
-      type: "string"
-      required: true
-      default: "key1=value1,key2=value2"
-      description: "Example: key1=value1,key2=value2, etc..."
+  #  - variable: affinity_host_labels
+  #    label: "Affinity host labels"
+  #    type: "string"
+  #    required: true
+  #    default: "key1=value1,key2=value2"
+  #    description: "Example: key1=value1,key2=value2, etc..."

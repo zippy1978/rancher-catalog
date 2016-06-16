@@ -1,0 +1,24 @@
+.catalog:
+  name: Dynamic HTTP Proxy
+  version: default
+  description: |
+    Dynamic HTTP Proxy designed to handle traffic and domains in front of web applications
+  questions:
+    - variable: http_port
+      label: "HTTP port"
+      required: true
+      type: "int"
+      default: 80
+      description: "HTTP port"
+    - variable: https_port
+      label: "HTTPS port"
+      type: "int"
+      required: true
+      default: 443
+      description: "HTTPS port"
+    - variable: hostname
+      label: "Hostname"
+      type: "string"
+      required: true
+      default: "host"
+      description: "Name of the the target host"

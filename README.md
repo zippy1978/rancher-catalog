@@ -1,1 +1,3 @@
-# rancher-catalog
+# Rancher Catalog
+
+My custom Rancher Catalog.

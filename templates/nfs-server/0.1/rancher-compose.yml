@@ -1,0 +1,18 @@
+.catalog:
+  name: NFS Server
+  version: 0.1
+  description: |
+    Exposes a mount point of a host over NFS protocol.
+  questions:
+    - variable: "MOUNT_POINT"
+      label: "NFS mount point"
+      type: "string"
+      required: true
+      default: "/my-share"
+      description: "Example: /var/myshare (path must exists on the host)"
+    - variable: "AFF_HOST_LABELS"
+      label: "Affinity host labels"
+      type: "string"
+      required: true
+      default: "key1=value1,key2=value2"
+      description: "Example: key1=value1,key2=value2, etc..."

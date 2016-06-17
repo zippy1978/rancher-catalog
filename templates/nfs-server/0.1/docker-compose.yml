@@ -1,0 +1,9 @@
+nfs-server:
+  labels:
+      io.rancher.scheduler.affinity:host_label: ${AFF_HOST_LABELS}
+  image: cpuguy83/nfs-server
+  container_name: nfs-server
+  command: ${MOUNT_POINT}
+  privileged: true
+  volumes:
+    - ${MOUNT_POINT}:${MOUNT_POINT}

@@ -1,0 +1,5 @@
+name: NFS server
+description: |
+  Exposes a mount point of a host over NFS protocol.
+version: 0.1
+category: Networking

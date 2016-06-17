@@ -1,6 +1,6 @@
 .catalog:
   name: Dynamic HTTP Proxy
-  version: default
+  version: 0.1
   description: |
     Dynamic HTTP Proxy designed to handle traffic and domains in front of web applications.
   questions:

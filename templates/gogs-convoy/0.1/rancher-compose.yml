@@ -22,6 +22,30 @@
       required: true
       default: 3400
       description: "MySQL port"
+    - variable: "MYSQL_ROOT_PASSWORD"
+      label: "MySQL root password"
+      type: "password"
+      required: true
+      default: "gogsroot"
+      description: "MySQL root user pasword"
+    - variable: "MYSQL_DATABASE_NAME"
+      label: "MySQL database name"
+      type: "string"
+      required: true
+      default: "gogs"
+      description: "MySQL database name"
+    - variable: "MYSQL_USER"
+      label: "MySQL user"
+      type: "string"
+      required: true
+      default: "gogs"
+      description: "MySQL Gogs user"
+    - variable: "MYSQL_PASSWORD"
+      label: "MySQL password"
+      type: "password"
+      required: true
+      default: "gogs"
+      description: "MySQL Gogs user password"
     - variable: "VOLUME_DRIVER"
       label: "Volume driver"
       type: "enum"

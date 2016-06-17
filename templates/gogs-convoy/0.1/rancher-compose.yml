@@ -1,0 +1,51 @@
+.catalog:
+  name: Gogs with Convoy storage
+  version: 0.1
+  description: |
+    Gogs Git server with Convoy storage.
+  questions:
+    - variable: "HTTP_PORT"
+      label: "HTTP port"
+      required: true
+      type: "int"
+      default: 3000
+      description: "SSH port"
+    - variable: "SSH_PORT"
+      label: "SSH port"
+      type: "int"
+      required: true
+      default: 10022
+      description: "SSH port"
+    - variable: "MYSQL_PORT"
+      label: "MySQL port"
+      type: "int"
+      required: true
+      default: 3400
+      description: "MySQL port"
+    - variable: "VOLUME_DRIVER"
+      label: "Volume driver"
+      type: "enum"
+      required: true
+      default: "convoy-nfs"
+      options:
+        - convoy-nfs
+        - convoy
+      description: "Convoy volume driver"
+    - variable: "DATA_VOLUME"
+      label: "Data volume"
+      type: "string"
+      required: true
+      default: "gogs-data"
+      description: "Convoy volume name for data"
+    - variable: "DB_VOLUME"
+      label: "Database volume"
+      type: "string"
+      required: true
+      default: "gogs-dbdata"
+      description: "Convoy volume name for database"
+    - variable: "AFF_HOST_LABELS"
+      label: "Affinity host labels"
+      type: "string"
+      required: false
+      default: "key1=value1,key2=value2"
+      description: "Example: key1=value1,key2=value2, etc..."

@@ -31,21 +31,27 @@
         - convoy-nfs
         - convoy
       description: "Convoy volume driver"
-    - variable: "DATA_VOLUME"
-      label: "Data volume"
+    - variable: "VOLUME"
+      label: "Volume"
       type: "string"
       required: true
-      default: "gogs-data"
-      description: "Convoy volume name for data"
-    - variable: "DB_VOLUME"
-      label: "Database volume"
-      type: "string"
-      required: true
-      default: "gogs-dbdata"
-      description: "Convoy volume name for database"
+      default: "gogs"
+      description: "Convoy volume for persisten storage of service data"
     - variable: "AFF_HOST_LABELS"
       label: "Affinity host labels"
       type: "string"
       required: false
       default: "key1=value1,key2=value2"
       description: "Example: key1=value1,key2=value2, etc..."
+    - variable: "VHOST_DOMAIN_NAME"
+      label: "Virtual host domain name"
+      type: "string"
+      required: false
+      default: ""
+      description: "Domain name to use for the service if using dynamic proxy"
+    - variable: "VHOST_PORT"
+      label: "Virtual host port"
+      type: "string"
+      required: false
+      default: ""
+      description: "port to expose if using dynamic proxy"

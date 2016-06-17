@@ -6,19 +6,21 @@ gogs-server:
     - "${SSH_PORT}:22"
   volume_driver: ${VOLUME_DRIVER}
   volumes:
-    - ${VOLUME}:/data
+    - ${DATA_VOLUME}:/data
   links:
     - gogs-db:mysql
   environment:
     - VIRTUAL_HOST=${VHOST_DOMAIN_NAME}
     - VIRTUAL_PORT=3000
+    - LETSENCRYPT_HOST=${VHOST_DOMAIN_NAME}
+    - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
 
 gogs-db:
   image: mysql:5.6
   container_name: gogs-db
   volume_driver: ${VOLUME_DRIVER}
   volumes:
-    - ${VOLUME}:/var/lib/mysql
+    - ${DB_VOLUME}:/var/lib/mysql
   ports:
     - "${MYSQL_PORT}:3306"
   environment:

@@ -55,12 +55,18 @@
         - convoy-nfs
         - convoy
       description: "Convoy volume driver"
-    - variable: "VOLUME"
-      label: "Volume"
+    - variable: "DATA_VOLUME"
+      label: "Data volume"
       type: "string"
       required: true
-      default: "gogs"
-      description: "Convoy volume for persisten storage of service data"
+      default: "gogs-data"
+      description: "Convoy volume for persistent storage of service data"
+    - variable: "DB_VOLUME"
+      label: "Database volume"
+      type: "string"
+      required: true
+      default: "gogs-dbdata"
+      description: "Convoy volume for persistent storage of database data"
     - variable: "AFF_HOST_LABELS"
       label: "Affinity host labels"
       type: "string"
@@ -73,3 +79,9 @@
       required: false
       default: ""
       description: "Domain name to use for the service if using dynamic proxy"
+    - variable: "LETSENCRYPT_EMAIL"
+      label: "Letsencrypt e-mail"
+      type: "string"
+      required: false
+      default: ""
+      description: "Letsencrypt e-mail if using dynamic proxy"

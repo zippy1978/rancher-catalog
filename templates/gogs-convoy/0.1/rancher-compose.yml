@@ -49,9 +49,3 @@
       required: false
       default: ""
       description: "Domain name to use for the service if using dynamic proxy"
-    - variable: "VHOST_PORT"
-      label: "Virtual host port"
-      type: "string"
-      required: false
-      default: ""
-      description: "port to expose if using dynamic proxy"

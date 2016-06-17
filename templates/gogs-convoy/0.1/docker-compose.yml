@@ -11,7 +11,7 @@ gogs-server:
     - gogs-db:mysql
   environment:
     - VIRTUAL_HOST=${VHOST_DOMAIN_NAME}
-    - VIRTUAL_PORT=${VHOST_PORT}
+    - VIRTUAL_PORT=3000
 
 gogs-db:
   image: mysql:5.6

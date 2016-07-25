@@ -1,8 +1,8 @@
 .catalog:
-  name: Gogs
+  name: Owncloud
   version: 0.1
   description: |
-    Gogs Git server.
+    Owncloud.
   questions:
     - variable: "HTTP_PORT"
       label: "HTTP port"
@@ -10,60 +10,48 @@
       type: "int"
       default: 3000
       description: "HTTP port"
-    - variable: "SSH_PORT"
-      label: "SSH port"
-      type: "int"
-      required: true
-      default: 10022
-      description: "SSH port"
-    - variable: "MYSQL_PORT"
-      label: "MySQL port"
-      type: "int"
-      required: true
-      default: 3400
-      description: "MySQL port"
     - variable: "MYSQL_ROOT_PASSWORD"
       label: "MySQL root password"
       type: "password"
       required: true
-      default: "gogsroot"
+      default: "cloudroot"
       description: "MySQL root user pasword"
     - variable: "MYSQL_DATABASE_NAME"
       label: "MySQL database name"
       type: "string"
       required: true
-      default: "gogs"
+      default: "owncloud"
       description: "MySQL database name"
     - variable: "MYSQL_USER"
       label: "MySQL user"
       type: "string"
       required: true
-      default: "gogs"
-      description: "MySQL Gogs user"
+      default: "cloud"
+      description: "MySQL user"
     - variable: "MYSQL_PASSWORD"
       label: "MySQL password"
       type: "password"
       required: true
-      default: "gogs"
-      description: "MySQL Gogs user password"
+      default: "cloud"
+      description: "MySQL user password"
     - variable: "DATA_VOLUME"
       label: "Data volume"
       type: "string"
       required: true
-      default: "/var/docker/gogs-data"
+      default: "/var/docker/owncloud-data"
       description: "Volume for persistent storage of service data"
+    - variable: "CONFIG_VOLUME"
+      label: "Configuration volume"
+      type: "string"
+      required: true
+      default: "/var/docker/owncloud-config"
+      description: "Volume for persistent storage of service configuration data"
     - variable: "DB_VOLUME"
       label: "Database volume"
       type: "string"
       required: true
-      default: "/var/docker/gogs-dbdata"
-      description: "Volume for persistent storage of database data"
-    - variable: "AFF_HOST_LABELS"
-      label: "Affinity host labels"
-      type: "string"
-      required: false
-      default: "key1=value1,key2=value2"
-      description: "Example: key1=value1,key2=value2, etc..."
+      default: "/var/docker/owncloud-dbdata"
+      description: "Convoy volume for persistent storage of database data"
     - variable: "VHOST_DOMAIN_NAME"
       label: "Virtual host domain name"
       type: "string"

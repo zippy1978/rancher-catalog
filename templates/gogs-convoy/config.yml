@@ -1,5 +1,0 @@
-name: Gogs with Convoy storage
-description: |
-  Gogs Git server with Convoy storage.
-version: 0.1
-category: Git

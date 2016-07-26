@@ -51,7 +51,7 @@
       type: "string"
       required: true
       default: "/var/docker/owncloud-dbdata"
-      description: "Convoy volume for persistent storage of database data"
+      description: "Volume for persistent storage of database data"
     - variable: "VHOST_DOMAIN_NAME"
       label: "Virtual host domain name"
       type: "string"

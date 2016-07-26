@@ -14,7 +14,7 @@
       label: "Data volume"
       type: "string"
       required: true
-      default: "/var/docker/owncloud-data"
+      default: "/var/docker/nodered-data"
       description: "Volume for persistent storage of service data"
     - variable: "VHOST_DOMAIN_NAME"
       label: "Virtual host domain name"

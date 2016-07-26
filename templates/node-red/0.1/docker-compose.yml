@@ -1,5 +1,5 @@
 nodered-server:
-  image: docker pull nodered/node-red-docker
+  image: nodered/node-red-docker
   ports:
     - "${HTTP_PORT}:1880"
   expose:

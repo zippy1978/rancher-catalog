@@ -12,6 +12,7 @@ nginx-proxy:
     - "/etc/nginx/vhost.d"
     - "/usr/share/nginx/html"
     - "/var/certs:/etc/nginx/certs:ro"
+    - /var/run/docker.sock:/tmp/docker.sock:ro
 
 nginx-gen:
   image: jwilder/docker-gen

@@ -1,4 +1,8 @@
 owncloud-server:
+  labels:
+    rap.host: ${VHOST_DOMAIN_NAME}
+    rap.le_host: ${VHOST_DOMAIN_NAME}
+    rap.le_email: ${LETSENCRYPT_EMAIL}
   image: owncloud:latest
   ports:
     - "${HTTP_PORT}:80"

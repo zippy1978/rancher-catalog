@@ -1,4 +1,8 @@
 gogs-server:
+  labels:
+    rap.host: ${VHOST_DOMAIN_NAME}
+    rap.le_host: ${VHOST_DOMAIN_NAME}
+    rap.le_email: ${LETSENCRYPT_EMAIL}
   image: gogs/gogs
   container_name: gogs-server
   ports:

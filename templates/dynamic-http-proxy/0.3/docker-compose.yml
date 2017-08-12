@@ -1,6 +1,6 @@
 nginx-proxy:
   labels:
-    io.rancher.sidekicks: letsencrypt-companion
+    io.rancher.sidekicks: letsencrypt-companion, nginx-gen
     io.rancher.scheduler.affinity:host_label: ${AFF_HOST_LABELS}
   image: jwilder/nginx-proxy
   container_name: nginx-proxy

@@ -4,12 +4,6 @@
   description: |
     Owncloud.
   questions:
-    - variable: "HTTP_PORT"
-      label: "HTTP port"
-      required: true
-      type: "int"
-      default: 3000
-      description: "HTTP port"
     - variable: "MYSQL_ROOT_PASSWORD"
       label: "MySQL root password"
       type: "password"

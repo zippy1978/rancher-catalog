@@ -4,12 +4,6 @@
   description: |
     Gogs Git server.
   questions:
-    - variable: "HTTP_PORT"
-      label: "HTTP port"
-      required: true
-      type: "int"
-      default: 3000
-      description: "HTTP port"
     - variable: "SSH_PORT"
       label: "SSH port"
       type: "int"

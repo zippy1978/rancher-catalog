@@ -1,0 +1,33 @@
+sonarqube-server:
+  labels:
+    rap.host: ${VHOST_DOMAIN_NAME}
+    rap.le_host: ${VHOST_DOMAIN_NAME}
+    rap.le_email: ${LETSENCRYPT_EMAIL}
+    rap.port: 9000
+  image: sonarqube:7.8-community
+  container_name: sonarqube-server
+  ports:
+    - "${HTTP_PORT}:9000"
+  volumes:
+    - ${CONF_VOLUME}:/opt/sonarqube/conf
+    - ${DATA_VOLUME}:/opt/sonarqube/data
+    - ${EXTENSIONS_VOLUME}:/opt/sonarqube/extensions
+  links:
+    - sonarqube-db
+  environment:
+    - sonar.jdbc.url=jdbc:postgresql://sonarqube-db:5432/sonar
+    - VIRTUAL_HOST=${VHOST_DOMAIN_NAME}
+    - VIRTUAL_PORT=9000
+    - LETSENCRYPT_HOST=${VHOST_DOMAIN_NAME}
+    - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+
+sonarqube-db:
+  image: postgres
+  container_name: sonarqube-db
+  volumes:
+    - ${POSTGRESQL_VOLUME}:/var/lib/postgresql
+    # This needs explicit mapping due to https://github.com/docker-library/postgres/blob/4e48e3228a30763913ece952c611e5e9b95c8759/Dockerfile.template#L52
+    - ${POSTGRESQL_DATA_VOLUME}:/var/lib/postgresql/data
+  environment:
+    - POSTGRES_USER=sonar
+    - POSTGRES_PASSWORD=sonar

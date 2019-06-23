@@ -1,0 +1,54 @@
+.catalog:
+  name: Gogs
+  version: 0.1
+  description: |
+    Gogs Git server.
+  questions:
+    - variable: "HTTP_PORT"
+      label: "HTTP port"
+      type: "int"
+      required: true
+      default: 9000
+      description: "HTTP port"
+    - variable: "CONF_VOLUME"
+      label: "Conf volume"
+      type: "string"
+      required: true
+      default: "/var/docker/sonarqube/conf"
+      description: "Volume for persistent storage of service config"
+    - variable: "DATA_VOLUME"
+      label: "Data volume"
+      type: "string"
+      required: true
+      default: "/var/docker/sonarqube/data"
+      description: "Volume for persistent storage of service data"
+    - variable: "EXTENSIONS_VOLUME"
+      label: "Extensions volume"
+      type: "string"
+      required: true
+      default: "/var/docker/sonarqube/extensions"
+      description: "Volume for persistent storage of service extensions"
+    - variable: "POSTGRESQL_VOLUME"
+      label: "Database volume"
+      type: "string"
+      required: true
+      default: "/var/docker/sonarqube/postgres"
+      description: "Volume for persistent storage of database data"
+    - variable: "POSTGRESQL_DATA_VOLUME"
+      label: "Database data volume"
+      type: "string"
+      required: true
+      default: "/var/docker/sonarqube/postgres_data"
+      description: "Volume for persistent storage of database data"
+    - variable: "VHOST_DOMAIN_NAME"
+      label: "Virtual host domain name"
+      type: "string"
+      required: false
+      default: ""
+      description: "Domain name to use for the service if using dynamic proxy"
+    - variable: "LETSENCRYPT_EMAIL"
+      label: "Letsencrypt e-mail"
+      type: "string"
+      required: false
+      default: ""
+      description: "Letsencrypt e-mail if using dynamic proxy"
